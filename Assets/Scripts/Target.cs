@@ -41,6 +41,11 @@ public class Target : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
+
+        if (!gameObject.CompareTag("bad"))
+        {
+            gameManager.gameOver();
+        }
     }
 
     Vector3 randomForce()
